@@ -20,5 +20,7 @@ Proximos passos:
         ° Conferir responsividade
         ° Verificar com humberto o layout do projeto
 
+        ° Aperfeiçoar criação de componentes com Restyle
+
 OBS: 
 Arquivo temporário
