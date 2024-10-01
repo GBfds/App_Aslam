@@ -20,19 +20,31 @@ type UserPros={
 export const AuthContext = createContext({} as AuthContextProps)
 
 export default function AuthProvider({children}: AuthProviderProps){
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
     const [user, setUser] = useState<UserPros>({
         id: "",
         name: "",
         token: ""
     })
 
+    //Autenticação fica condicionada a existencia de um token
+    const isAuthenticated = !!user.token
+
+    //Esperando os tipos de dados do usuario, informações seram gurdadas usando AsyncStorage
     function SignIn(){
-        setIsAuthenticated(true)
+        setUser({
+            id: "",
+            name: "",
+            token: "Token"
+        })
     }
 
+    //SignOut apaga registro do AsyncStorage
     function SignOut(){
-        setIsAuthenticated(false)
+        setUser({
+            id: "",
+            name: "",
+            token: ""
+        })
     }
     return(
         <AuthContext.Provider value={{user, isAuthenticated, SignIn, SignOut}}>

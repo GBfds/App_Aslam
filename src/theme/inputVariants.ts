@@ -3,9 +3,6 @@ export const inputVariants={
         justifyContent: "center",
         alignItems: "flex-start",
         backgroundColor: "black"
-    },
-    pk: {
-        height: 90
     }
 
 }

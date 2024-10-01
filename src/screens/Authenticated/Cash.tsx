@@ -97,7 +97,7 @@ export default function Cash(){
             </Box>
 
             <SafeArea style={{width: "100%", 
-                alignItems: "center", marginBottom: 60}}>
+                alignItems: "center", marginBottom: 100}}>
                 <FlatList              
                 data={db.caixa}
                 renderItem={({item})=> <Table item={item}/>}

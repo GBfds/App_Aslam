@@ -12,7 +12,7 @@ const Text = createText<ThemeProps>()
 
 export default function HomeScreen(){
     const navigation = useNavigation<StackRoutesTypes>()
-    const {SignIn} = useContext(AuthContext)
+    const {SignOut} = useContext(AuthContext)
 
     return(
         <Screen>
@@ -25,18 +25,32 @@ export default function HomeScreen(){
             gap="s"
             justifyContent="space-between"
             >
-            <Button variant="medium" title="Caixa financeiro" 
-            icon="cash-plus"
+            <Button variant="medium" title="Caixa financeiro"  textColor="white" textVariants="medium"
+            icon="cash-plus" iconColor="white"
             padding="s" 
             onPress={()=> navigation.navigate("Cash")}/>
-            <Button variant="medium" title="Crescimento da empresa" 
-            icon="finance" 
+            <Button variant="medium" title="Crescimento da empresa" textColor="white" textVariants="medium"
+            icon="finance" iconColor="white"
             padding="s"
             onPress={()=> navigation.navigate("Growth")}/>
-            <Button variant="medium" title="Faturamento de plano" 
-            icon="bank-transfer" 
+            <Button variant="medium" title="Faturamento de plano" textColor="white" textVariants="medium"
+            icon="bank-transfer" iconColor="white"
             padding="s"
             onPress={()=> navigation.navigate("Invoicing")}/>
+            </Box>
+
+            <Box
+            width={80}
+            height={80}
+            position="absolute"
+            right={30}
+            bottom={50}
+            >
+                <Button
+                variant="logout"
+                icon="logout-variant"
+                iconColor="white"
+                onPress={SignOut}/>
             </Box>
         </Screen>
     )

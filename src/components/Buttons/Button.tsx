@@ -17,7 +17,7 @@ const Text = createText<ThemeProps>()
 
 
 type Props = ButtonCustomProps & {
-    title: string;
+    title?: string;
     onPress?: ()=> void;
     icon?: keyof typeof MaterialCommunityIcons.glyphMap;
     textColor?: keyof typeof theme.colors;
@@ -30,7 +30,7 @@ export default function Button(props: Props){
     return(
         <TouchableOpacity onPress={props.onPress}>
             <Box {...props}>
-                <Text color={props.textColor}>{props.title}</Text>
+                {props.title &&<Text color={props.textColor}>{props.title}</Text>}
                 {props.icon && <MaterialCommunityIcons color={props.iconColor} name={props.icon} size={30}/>}
             </Box>
         </TouchableOpacity>

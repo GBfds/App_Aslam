@@ -1,7 +1,7 @@
 
 export const buttonVariants={
     defaults:{
-        width: 4000,
+        width: 400,
         maxWidth: "90%",
         height: 46,
         flexDirection: "row",
@@ -19,8 +19,12 @@ export const buttonVariants={
         flexWrap: 'wrap',
         gap: "s",
     },
-    dark:{
-        backgroundColor: "blue_600"
+    logout:{
+        zIndex: 100,
+        backgroundColor: "blue_800",
+        borderRadius: 50,
+        height: 80,
+        width: 80,
     },
     small:{
         width: 120,
