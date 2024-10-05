@@ -1,8 +1,17 @@
+
+
 export const inputVariants={
     defaults:{
-        justifyContent: "center",
-        alignItems: "flex-start",
-        backgroundColor: "black"
+        backgroundColor: "blue_10",
+        maxWidth: "95%",
+        width: 1800,
+        height: 56,
+        borderRadius: 8,
+        padding: "m",
+        marginBottom: "l"
+    }, 
+    small: {
+        backgroundColor: "blue_800",
     }
 
 }

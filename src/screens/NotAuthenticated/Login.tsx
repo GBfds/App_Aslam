@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import { createBox } from "@shopify/restyle";
-import {useForm, Controller} from "react-hook-form";
-
+import { createBox, createText } from "@shopify/restyle";
 import { ThemeProps } from "../../theme";
-import { AuthContext } from "../../contexts/AuthContext";
-//import Input from "../../components/inputs/input";
+import Input from "../../components/inputs/input";
 import Button from "../../components/Buttons/Button";
-import TextInput from "../../components/inputs/TextInput";
+import {useForm, Controller} from "react-hook-form"
+import { AuthContext } from "../../contexts/AuthContext";
 
 type FormData={
     email: string;
@@ -15,7 +13,7 @@ type FormData={
 
 const Box = createBox<ThemeProps>()
 
-export default function SignIn(){
+export default function Login(){
     const {SignIn} = useContext(AuthContext)
 
     const {control, handleSubmit, formState:{errors}} = useForm<FormData>()
@@ -40,23 +38,24 @@ export default function SignIn(){
                 control={control}
                 name="email"
                 render={({field:{value, onChange}})=>(
-                    <TextInput
+                    <Input
+                    placeholder="Email"
+                    h={46}
+                    pdd={8}
                     value={value}
-                    onChangeText={onChange}
-                    placeholder="Digite seu Email"
-                    
-                    />)}
+                    onChangeText={onChange}/>)}
                 />
                 
                 <Controller
                 control={control}
                 name="password"
                 render={({field:{value, onChange}})=>(
-                    <TextInput
+                    <Input
+                    placeholder="Senha"
+                    h={46}
+                    pdd={8}
                     value={value}
-                    onChangeText={onChange}
-                    placeholder="Digite sua senha"
-                    />
+                    onChangeText={onChange}/>
                 )}/>
 
                 <Button title="Acessar" marginVertical="m" onPress={handleSubmit(Submit)}/>
