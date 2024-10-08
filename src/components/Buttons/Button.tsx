@@ -2,7 +2,6 @@ import React from "react";
 import { createRestyleComponent, createText, createVariant, spacing, SpacingProps, VariantProps } from "@shopify/restyle";
 import { DimensionValue, TouchableOpacity } from "react-native";
 import theme,{ ThemeProps } from "../../theme";
-//import {MaterialIcons} from "@expo/vector-icons"
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 type ButtonCustomProps= 

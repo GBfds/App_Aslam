@@ -10,12 +10,15 @@ const Box = createRestyleComponent<CustomTextInputProps, ThemeProps>([
     createVariant({themeKey: "inputVariants"})
 ])
 
-type PropsComponent = CustomTextInputProps
+type ComponentProps ={
+    inputProps: TextInputProps
+    variantProps?: CustomTextInputProps
+}
 
-export default function TextInput(InputProps: TextInputProps, PropsComponent: PropsComponent){
+export default function TextInput({inputProps, variantProps}: ComponentProps){
     return(
-        <Box {...PropsComponent}>
-            <ReactTextInput style={{width: "100%", height: "100%"}} {...InputProps}/>
+        <Box {...variantProps}>
+            <ReactTextInput style={{width: "100%", height: "100%"}} {...inputProps}/>
         </Box>
     )
 }

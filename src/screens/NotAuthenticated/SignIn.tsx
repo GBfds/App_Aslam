@@ -41,9 +41,11 @@ export default function SignIn(){
                 name="email"
                 render={({field:{value, onChange}})=>(
                     <TextInput
-                    value={value}
-                    onChangeText={onChange}
-                    placeholder="Digite seu Email"
+                    inputProps={{
+                        value: value,
+                        onChangeText: onChange,
+                        placeholder: "Digite seu Email"
+                    }}
                     
                     />)}
                 />
@@ -53,9 +55,11 @@ export default function SignIn(){
                 name="password"
                 render={({field:{value, onChange}})=>(
                     <TextInput
-                    value={value}
-                    onChangeText={onChange}
-                    placeholder="Digite sua senha"
+                    inputProps={{
+                        value: value,
+                        onChangeText: onChange,
+                        placeholder: "Digite seu Email"
+                    }}
                     />
                 )}/>
 
