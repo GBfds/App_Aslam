@@ -1,19 +1,16 @@
 
 export const buttonVariants={
     defaults:{
-        width: 400,
-        maxWidth: "90%",
+        width: "100%",
         height: 46,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
         backgroundColor: "blue_200",
         borderRadius: 8,
-        marginBottom: "s",
     },
     medium:{
-        minHeight: 95,
-        width: 180,
+        height: 80,
         justifyContent: "center",
         alignItems: "center",
         flexWrap: 'wrap',

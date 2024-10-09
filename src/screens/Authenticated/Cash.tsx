@@ -46,23 +46,28 @@ export default function Cash(){
             alignItems="center"
             justifyContent="space-between">
                 <Button 
-                variant="small" 
-                textVariants="medium" 
-                title="Voltar" 
-                iconColor="white"
-                icon="arrow-left-bottom"
-                textColor="white"
-                onPress={()=> navigation.goBack()}/>
+                ComponentProps={{
+                    variant:"small" ,
+                    title:"Voltar" ,
+                    iconColor:"white",
+                    icon:"arrow-left-bottom",
+                    textColor:"white",
+                }}
+                ButtonProps={{
+                    onPress: ()=> navigation.goBack()
+                }}
+                />
 
                 <Text variant="mediumLigth">Empresa X</Text>
 
                 <Button 
-                variant="small" 
-                title="recarregar" 
-                icon="refresh"
-                textVariants="medium"
-                textColor="white"
-                iconColor="white"/>
+                ComponentProps={{
+                    variant:"small" ,
+                    title:"recarregar" ,
+                    icon:"refresh",
+                    textColor:"white",
+                    iconColor:"white",
+                }}/>
             </Box>
 
             <Box 
@@ -76,24 +81,30 @@ export default function Cash(){
             alignItems="center"
             elevation={8}>
                 <Button 
-                variant="small" 
-                textVariants="medium" 
-                title="Dia Anterior" 
-                iconColor="white"
-                icon="arrow-left" 
-                textColor="white"
-                onPress={PreviusDate}/>
+                ComponentProps={{
+                    variant:"small",
+                    title:"Dia Anterior",
+                    iconColor:"white",
+                    icon:"arrow-left" ,
+                    textColor:"white",
+                }}
+                ButtonProps={{
+                    onPress: PreviusDate
+                }}/>
 
                 <Text variant="medium">{date.toLocaleDateString('pt-BR')}</Text>
 
                 <Button 
-                variant="small" 
-                textVariants="medium" 
-                title="Dia Seguinte" 
-                iconColor="white"
-                icon="arrow-right" 
-                textColor="white"
-                onPress={ NextDate}/>
+                ComponentProps={{
+                    variant:"small" ,
+                    title:"Dia Seguinte",
+                    iconColor:"white",
+                    icon:"arrow-right" ,
+                    textColor:"white",
+                }}
+                ButtonProps={{
+                    onPress: NextDate
+                }}/>
             </Box>
 
             <SafeArea style={{width: "100%", 

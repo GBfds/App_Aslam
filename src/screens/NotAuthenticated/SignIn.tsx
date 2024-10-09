@@ -4,7 +4,6 @@ import {useForm, Controller} from "react-hook-form";
 
 import { ThemeProps } from "../../theme";
 import { AuthContext } from "../../contexts/AuthContext";
-//import Input from "../../components/inputs/input";
 import Button from "../../components/Buttons/Button";
 import TextInput from "../../components/inputs/TextInput";
 
@@ -12,7 +11,7 @@ type FormData={
     email: string;
     password: string
 }
-
+//
 const Box = createBox<ThemeProps>()
 
 export default function SignIn(){
@@ -46,7 +45,7 @@ export default function SignIn(){
                         onChangeText: onChange,
                         placeholder: "Digite seu Email"
                     }}
-                    
+                    message="teste"
                     />)}
                 />
                 
@@ -63,7 +62,17 @@ export default function SignIn(){
                     />
                 )}/>
 
-                <Button title="Acessar" marginVertical="m" onPress={handleSubmit(Submit)}/>
+                <Button
+                ButtonProps={{
+                    onPress: handleSubmit(Submit),
+                    style:{
+                        width: "90%",
+                        marginTop: 16
+                    }
+                }}
+                ComponentProps={{
+                    title: "Acessar"
+                }}/>
             </Box>
         </Box>
     )

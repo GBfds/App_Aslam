@@ -8,7 +8,7 @@ export const inputVariants={
         height: 56,
         borderRadius: 8,
         padding: "m",
-        marginBottom: "l"
+        margin: "s"
     }, 
     small: {
         backgroundColor: "blue_800",

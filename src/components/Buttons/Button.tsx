@@ -1,6 +1,6 @@
 import React from "react";
-import { createRestyleComponent, createText, createVariant, spacing, SpacingProps, VariantProps } from "@shopify/restyle";
-import { DimensionValue, TouchableOpacity } from "react-native";
+import { createRestyleComponent, createText, createVariant, spacing, SpacingProps, VariantProps, TextProps } from "@shopify/restyle";
+import { DimensionValue, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import theme,{ ThemeProps } from "../../theme";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
@@ -15,22 +15,26 @@ const Box = createRestyleComponent<ButtonCustomProps ,ThemeProps>([
 const Text = createText<ThemeProps>()
 
 
-type Props = ButtonCustomProps & {
+type TypeProps = ButtonCustomProps & {
     title?: string;
-    onPress?: ()=> void;
     icon?: keyof typeof MaterialCommunityIcons.glyphMap;
     textColor?: keyof typeof theme.colors;
     iconColor?: keyof typeof theme.colors;
     iconSize?: DimensionValue;
-    textVariants?: "title" | "medium" | undefined;
+    //textVariants?: textCustomProps
 }
 
-export default function Button(props: Props){
+type Props ={
+    ButtonProps?: TouchableOpacityProps;
+    ComponentProps: TypeProps
+}
+
+export default function Button({ButtonProps, ComponentProps}: Props){
     return(
-        <TouchableOpacity onPress={props.onPress}>
-            <Box {...props}>
-                {props.title &&<Text color={props.textColor}>{props.title}</Text>}
-                {props.icon && <MaterialCommunityIcons color={props.iconColor} name={props.icon} size={30}/>}
+        <TouchableOpacity {...ButtonProps}>
+            <Box {...ComponentProps}>
+                {ComponentProps?.title &&<Text color={ComponentProps?.textColor}>{ComponentProps?.title}</Text>}
+                {ComponentProps?.icon && <MaterialCommunityIcons color={ComponentProps?.iconColor} name={ComponentProps?.icon} size={30}/>}
             </Box>
         </TouchableOpacity>
     )
